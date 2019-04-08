@@ -1,0 +1,17 @@
+var twoSum = function(nums, target) {
+    let NumSum = [];
+    nums.forEach(function(item,i){
+        let diff=target - item ;
+        var indexN = nums.indexOf(diff);
+        if(indexN >-1 && indexN !== i){
+            NumSum.push(i);
+            NumSum.push(indexN);
+         }
+      }
+   );
+     var unique = NumSum.filter(function(elem, index, self) {
+    return index === self.indexOf(elem);})    
+    return unique;
+};
+
+towSum([2,7,11,15],9);
